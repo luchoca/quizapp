@@ -1,7 +1,7 @@
 const preguntas = [
   {
     categoria: "Deporte",
-    titulo: "¿Quien gano el mundial de 1950?",
+    titulo: "¿Quien ganó el mundial de 1950?",
     opciones: [
       { textoRespuesta: "Uruguay", isCorrect: true },
       { textoRespuesta: "Brasil", isCorrect: false },
@@ -11,7 +11,7 @@ const preguntas = [
   },
   {
     categoria: "Deporte",
-    titulo: "Club mas grande del mundo?",
+    titulo: "¿Club más grande del mundo?",
     opciones: [
       { textoRespuesta: "River", isCorrect: false },
       { textoRespuesta: "Peñarol", isCorrect: true },
@@ -21,7 +21,7 @@ const preguntas = [
   },
   {
     categoria: "Deporte",
-    titulo: "¿Cuantos Mundiales gano Uruguay?",
+    titulo: "¿Cuantos Mundiales ganó Uruguay?",
     opciones: [
       { textoRespuesta: "2", isCorrect: true },
       { textoRespuesta: "5", isCorrect: false },
@@ -50,7 +50,7 @@ const preguntas = [
     ],
   },
   {
-    categoria: "Matematicas",
+    categoria: "Matemáticas",
     titulo: "1 + 1",
     opciones: [
       { textoRespuesta: "2", isCorrect: true },
@@ -60,7 +60,7 @@ const preguntas = [
     ],
   },
   {
-    categoria: "Matematicas",
+    categoria: "Matemáticas",
     titulo: "3 * 17",
     opciones: [
       { textoRespuesta: "50", isCorrect: false },
@@ -70,7 +70,7 @@ const preguntas = [
     ],
   },
   {
-    categoria: "Matematicas",
+    categoria: "Matemáticas",
     titulo: "184 / 8 ",
     opciones: [
       { textoRespuesta: "23", isCorrect: true },
@@ -80,7 +80,7 @@ const preguntas = [
     ],
   },
   {
-    categoria: "Matematicas",
+    categoria: "Matemáticas",
     titulo: "16 + 16",
     opciones: [
       { textoRespuesta: "33", isCorrect: false },
@@ -90,7 +90,7 @@ const preguntas = [
     ],
   },
   {
-    categoria: "Matematicas",
+    categoria: "Matemáticas",
     titulo: "6 * 6",
     opciones: [
       { textoRespuesta: "36", isCorrect: true },
@@ -172,12 +172,12 @@ const preguntas = [
   },
   {
     categoria: "Cine o TV",
-    titulo: "¿Cuál es el mejor lenguaje de programación?",
+    titulo: "¿Cuantas peliculas de Rapido y furioso existen?",
     opciones: [
-      { textoRespuesta: "JavaScript", isCorrect: true },
-      { textoRespuesta: "PHP", isCorrect: false },
-      { textoRespuesta: "C++", isCorrect: false },
-      { textoRespuesta: "Kotlin", isCorrect: false },
+      { textoRespuesta: "6", isCorrect: false },
+      { textoRespuesta: "7", isCorrect: false },
+      { textoRespuesta: "8", isCorrect: false },
+      { textoRespuesta: "ni el director sabe", isCorrect: true },
     ],
   },
   {
