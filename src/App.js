@@ -1,5 +1,6 @@
 import preguntas from "./Preguntas/preguntas";
 import { useState, useEffect } from "react";
+import Start from "./Start/Start";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [tiempoRestante, setTiempoRestante] = useState(10);
   const [areDisabled, setAreDisabled] = useState(false);
   const [answersShown, setAnswersShown] = useState(false);
+  const [userName, setUsername] = useState(null);
 
   function handleAnswerSubmit(isCorrect, e) {
     // añadir puntuación
@@ -40,7 +42,10 @@ function App() {
     return (
       <main className="app">
         <div className="juego-terminado">
-          <span> Obtuviste {puntuación} Sofka Points</span>
+          <span>
+            {" "}
+            {userName} obtuviste {puntuación} Sofka Points
+          </span>
           <button onClick={() => (window.location.href = "/")}>
             {" "}
             Volver a jugar
@@ -94,48 +99,55 @@ function App() {
 
   return (
     <main className="app">
-      <div className="lado-izquierdo">
-        <div className="numero-pregunta">
-          <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
-        </div>
-        <div className="titulo-pregunta">
-          Categoria: {preguntas[preguntaActual].categoria}
-          <hr></hr>
-          {preguntas[preguntaActual].titulo}
-        </div>
-        <div>
-          {!areDisabled ? (
-            <span className="tiempo-restante">
-              Tiempo restante: {tiempoRestante}{" "}
-            </span>
-          ) : (
-            <button
-              onClick={() => {
-                setTiempoRestante(10);
-                setAreDisabled(false);
-                if (preguntaActual === preguntas.length - 1) {
-                  setIsFinished(true);
-                } else {
-                  setPreguntaActual(preguntaActual + 1);
-                }
-              }}
-            >
-              Continuar
-            </button>
-          )}
-        </div>
-      </div>
-      <div className="lado-derecho">
-        {preguntas[preguntaActual].opciones.map((respuesta) => (
-          <button
-            disabled={areDisabled}
-            key={respuesta.textoRespuesta}
-            onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
-          >
-            {respuesta.textoRespuesta}
-          </button>
-        ))}
-      </div>
+      {userName ? (
+        <>
+          {" "}
+          <div className="lado-izquierdo">
+            <div className="numero-pregunta">
+              <span> Pregunta {preguntaActual + 1} de</span> {preguntas.length}
+            </div>
+            <div className="titulo-pregunta">
+              Categoria: {preguntas[preguntaActual].categoria}
+              <hr></hr>
+              {preguntas[preguntaActual].titulo}
+            </div>
+            <div>
+              {!areDisabled ? (
+                <span className="tiempo-restante">
+                  Tiempo restante: {tiempoRestante}{" "}
+                </span>
+              ) : (
+                <button
+                  onClick={() => {
+                    setTiempoRestante(10);
+                    setAreDisabled(false);
+                    if (preguntaActual === preguntas.length - 1) {
+                      setIsFinished(true);
+                    } else {
+                      setPreguntaActual(preguntaActual + 1);
+                    }
+                  }}
+                >
+                  Continuar
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="lado-derecho">
+            {preguntas[preguntaActual].opciones.map((respuesta) => (
+              <button
+                disabled={areDisabled}
+                key={respuesta.textoRespuesta}
+                onClick={(e) => handleAnswerSubmit(respuesta.isCorrect, e)}
+              >
+                {respuesta.textoRespuesta}
+              </button>
+            ))}
+          </div>
+        </>
+      ) : (
+        <Start setUsername={setUsername} />
+      )}
     </main>
   );
 }
