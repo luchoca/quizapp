@@ -44,7 +44,7 @@ function App() {
         <div className="juego-terminado">
           <span>
             {" "}
-            {userName} obtuviste {puntuación} Sofka Points
+            {userName} Obtuviste {puntuación} Sofka Points
           </span>
           <button onClick={() => (window.location.href = "/")}>
             {" "}
